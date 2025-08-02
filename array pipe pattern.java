@@ -2,12 +2,12 @@ import java.util.*;
 public class Main
 {
     public static void print(int[] a,int n,int max){
-       for(int i=0;i<max;i++){
+       for(int i=max;i>=1;i--){
            for(int j=0;j<n;j++){
-                if(a[j]>=n-i)
-                   System.out.print("|");
+                if(a[j]>=i)
+                   System.out.print("| ");
                 else
-                    System.out.print(" ");
+                    System.out.print("  ");
            }
            System.out.println();
        }
