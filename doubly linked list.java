@@ -69,6 +69,7 @@ class LinkedList{
         fr.next.prev = fr;
     }
     void display(){
+        if(head == null) return;
         node temp=head;
         while(temp!=null){
             System.out.print(temp.data+" ");
@@ -77,6 +78,7 @@ class LinkedList{
         System.out.println();
     }
     void displayrev(){
+        if(head == null) return;
         node temp=tail;
         while(temp!=null){
             System.out.print(temp.data+" ");
@@ -85,7 +87,6 @@ class LinkedList{
         System.out.println();
     }
 }
-    
 public class Main
 {
 	public static void main(String[] args) {
