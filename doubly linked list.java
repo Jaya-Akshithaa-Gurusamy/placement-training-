@@ -48,6 +48,26 @@ class LinkedList{
             fr.next = newNode;
         }
     }
+    void deleteFirst(){
+        head = head.next;
+        head.prev = null;
+    }
+    void deleteEnd(){
+        node temp = head;
+        while(temp.next.next!=null)
+            temp = temp.next;
+        tail = temp;
+        tail.next = null;
+    }
+    void deleteposi(int p){
+        node fr = head;
+        node bk;
+        for(int i=0;i<p-2;i++)
+            fr=fr.next;
+        bk = fr.next;
+        fr.next = bk.next;
+        fr.next.prev = fr;
+    }
     void display(){
         node temp=head;
         while(temp!=null){
@@ -76,6 +96,11 @@ public class Main
 		ll.insertFirst(40);
 		ll.insertLast(50);
 		ll.insertposi(60,3);
+		ll.display();
+		ll.displayrev();
+		ll.deleteFirst();
+		ll.deleteEnd();
+		ll.deleteposi(3);
 		ll.display();
 		ll.displayrev();
 	}
