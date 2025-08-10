@@ -61,12 +61,19 @@ class LinkedList{
         bk = fr.next;
         fr.next = bk.next;
     }
+    void displayrev(node temp){
+        if(temp == null) return;
+        displayrev(temp.next);
+        System.out.print(temp.data + " ");
+    }
     void display(){
         node temp=head;
         while(temp!=null){
             System.out.print(temp.data+" ");
             temp=temp.next;
         }
+        System.out.println();
+        displayrev(head);
     }
 }
 public class Main {
